@@ -1,0 +1,232 @@
+% Cover.tex -- Institut de Technologie du Cambodge (ITC) thesis cover pages.
+%
+% Compiles to Cover.pdf (3 pages): title page, Khmer defense-approval page,
+% French defense-approval page -- matching the layout main.tex expects via
+% \includepdf[pages={1,2,3}]{Cover.pdf}.
+%
+% Fill in the placeholders marked [LIKE THIS], then compile:
+%   xelatex Cover.tex
+% and it produces Cover.pdf, ready to be picked up by main.tex.
+
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguage{khmer}
+\setmainfont{Times New Roman}
+% This cover uses Khmer OS Muol Light throughout (matches the original ITC cover design).
+\newfontfamily\khmerfont{Khmer OS Muol Light}[Script=Khmer]
+
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\pagestyle{empty}
+
+\newcommand{\headerlogos}{%
+  \noindent
+  \begin{minipage}[c]{0.18\textwidth}
+    \centering\includegraphics[width=0.85\textwidth]{cover_assets/ministry-logo.png}
+  \end{minipage}%
+  \begin{minipage}[c]{0.64\textwidth}
+    \centering
+    \begin{khmer}
+    \fontsize{16}{20}\selectfont ក្រសួងអប់រំ យុវជន និងកីឡា\\[2pt]
+    \fontsize{14}{18}\selectfont វិទ្យាស្ថានបច្ចេកវិទ្យាកម្ពុជា
+    \end{khmer}
+  \end{minipage}%
+  \begin{minipage}[c]{0.18\textwidth}
+    \centering\includegraphics[width=0.85\textwidth]{cover_assets/itc-logo.png}
+  \end{minipage}
+}
+
+% Faint ITC seal watermark, centered on the page (used on approval pages)
+\newcommand{\watermark}{%
+  \AddToShipoutPictureBG*{%
+    \AtPageCenter{%
+      \makebox(0,0){\includegraphics[width=0.65\paperwidth]{cover_assets/itc-watermark.png}}%
+    }%
+  }%
+}
+
+\begin{document}
+
+%% ================= PAGE 1: Title page (Khmer + French) =================
+\thispagestyle{empty}
+\begin{center}
+\setlength{\fboxsep}{8pt}
+\setlength{\fboxrule}{1.5pt}
+\fbox{\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+\vspace{0.7em}
+\headerlogos
+
+\vspace{1em}
+\begin{center}
+\begin{khmer}
+\fontsize{14}{18}\selectfont ដេប៉ាតឺម៉ង់ ទេពកោសល្យ អគ្គិសនី និងថាមពល\\[4pt]
+\fontsize{15}{20}\selectfont គម្រោងសញ្ញាបត្រវិស្វករ
+\end{khmer}
+\end{center}
+
+\vspace{1em}
+\begin{center}
+\begin{khmer}
+\fontsize{13}{18}\selectfont [ចំណងជើងគម្រោងជាភាសាខ្មែរ -- Thesis title in Khmer]
+\end{khmer}
+\end{center}
+
+\vspace{1em}
+\begin{khmer}
+\fontsize{12}{18}\selectfont
+\begin{tabbing}
+\hspace{5.5cm} \= \kill
+និស្សិត \> : [ឈ្មោះនិស្សិត -- Student name] \\[0.3em]
+ឯកទេស \> : [ជំនាញ -- Major] \\[0.3em]
+សាស្ត្រាចារ្យទទួលបន្ទុក \> : [ឈ្មោះទីប្រឹក្សា -- Advisor name] \\[0.3em]
+ឆ្នាំសិក្សា \> : [YYYY -- YYYY] \\
+\end{tabbing}
+\end{khmer}
+
+\vspace{1em}
+\noindent\makebox[0pt][l]{\hspace{\dimexpr-\fboxsep-\fboxrule\relax}\rule{\dimexpr\linewidth+2\fboxsep+2\fboxrule\relax}{1.5pt}}
+\vspace{0.8em}
+
+\begin{center}
+{\bfseries MINISTERE DE L'EDUCATION,\\
+DE LA JEUNESSE ET DES SPORTS}
+
+\vspace{0.7em}
+{\bfseries INSTITUT DE TECHNOLOGIE DU CAMBODGE}\\
+{\bfseries DEPARTEMENT DE GENIE [YOUR DEPARTMENT]}
+
+\vspace{0.7em}
+{\bfseries MEMOIRE DE FIN D'ETUDES INGENIEUR}
+\end{center}
+
+\vspace{0.7em}
+\begin{center}
+\textbf{[Thesis title in French]}
+\end{center}
+
+\vspace{1em}
+\bfseries
+\begin{tabular}{@{}p{4.5cm}l@{}}
+Etudiant & : [FIRSTNAME LASTNAME] \\
+Spécialité & : [Your specialty] \\
+Maître de stage & : [Advisor title and name] \\
+Année scolaire & : [YYYY -- YYYY] \\
+\end{tabular}
+\normalfont
+
+\vspace{0.7em}
+\end{minipage}}
+\end{center}
+\clearpage
+
+%% ================= PAGE 2: Khmer defense-approval page =================
+\watermark
+\thispagestyle{empty}
+\headerlogos
+
+\vspace{1em}
+\begin{center}
+\begin{khmer}
+\fontsize{14}{18}\selectfont ដេប៉ាតឺម៉ង់ ទេពកោសល្យ អគ្គិសនី និងថាមពល
+
+\vspace{1em}
+\fontsize{18}{24}\selectfont គម្រោងសញ្ញាបត្រវិស្វករ
+
+\vspace{1.5em}
+\fontsize{12}{18}\selectfont
+របស់និស្សិត [ឈ្មោះនិស្សិត -- Student name]
+
+\vspace{1.5em}
+កាលបរិច្ឆេទការពារនិក្ខេបបទ : ថ្ងៃ \underline{\hspace{2cm}} ខែ \underline{\hspace{2cm}} ឆ្នាំ [YYYY]
+
+\vspace{1em}
+អនុញ្ញាតឲ្យការពារគម្រោង
+
+\vspace{1em}
+\fontsize{14}{18}\selectfont នាយកវិទ្យាស្ថាន: \underline{\hspace{5cm}}
+
+\vspace{0.5em}
+\fontsize{12}{18}\selectfont ថ្ងៃទី \underline{\hspace{1.5cm}} ខែ \underline{\hspace{1.5cm}} ឆ្នាំ [YYYY]
+\end{khmer}
+\end{center}
+
+\vspace{2em}
+\begin{center}
+\textbf{[Thesis title in Khmer or English, as on the title page]}
+\end{center}
+
+\vspace{2em}
+\begin{khmer}
+\begin{tabbing}
+\hspace{6.5cm} \= \kill
+សហគ្រាស \> : [Institution/host organization] \\[0.8em]
+ប្រធានដេប៉ាតឺម៉ង់ \> : [Department head name] \underline{\hspace{3cm}} \\[0.8em]
+សាស្ត្រាចារ្យទទួលបន្ទុក \> : [Advisor name] \underline{\hspace{3cm}} \\[0.8em]
+អ្នកទទួលខុសត្រូវក្នុងសហគ្រាស \> : [Supervisor name] \underline{\hspace{3cm}} \\
+\end{tabbing}
+\end{khmer}
+
+\vspace{2em}
+\begin{center}
+\begin{khmer}\bfseries រាជធានីភ្នំពេញ ឆ្នាំ[YYYY]\end{khmer}
+\end{center}
+\clearpage
+
+%% ================= PAGE 3: French defense-approval page =================
+\watermark
+\thispagestyle{empty}
+\headerlogos
+
+\vspace{1.5em}
+\begin{center}
+{\bfseries INSTITUT DE TECHNOLOGIE DU CAMBODGE}
+
+\vspace{0.5em}
+{\bfseries DEPARTEMENT DE GENIE [YOUR DEPARTMENT]}
+
+\vspace{1.5em}
+{\bfseries MEMOIRE DE FIN D'ETUDES INGENIEUR}\\
+{\bfseries DE M. [FIRSTNAME LASTNAME]}
+
+\vspace{2em}
+\textbf{Date de soutenance : le} \underline{\hspace{4cm}} [YYYY]
+
+\vspace{1em}
+\textbf{« Autorise la soutenance du mémoire »}
+
+\vspace{2em}
+\textbf{Directeur de l'Institut :} \underline{\hspace{5cm}}
+
+\vspace{0.5em}
+\textbf{Phnom Penh, le} \underline{\hspace{5cm}} [YYYY]
+\end{center}
+
+\vspace{2em}
+\begin{center}
+\textbf{[Thesis title in French]}
+\end{center}
+
+\vspace{2em}
+\bfseries
+\begin{tabular}{@{}p{5cm}l@{}}
+Etablissement du stage & : [Institution/host organization] \\[1em]
+Chef du département & : [Department head name] \underline{\hspace{3cm}} \\[1em]
+Maître de stage & : [Advisor name] \underline{\hspace{3cm}} \\[1em]
+Tuteur de stage & : [Supervisor name] \underline{\hspace{3cm}} \\
+\end{tabular}
+\normalfont
+
+\vspace{2em}
+\begin{center}
+\textbf{PHNOM PENH, [YYYY]}
+\end{center}
+
+\end{document}

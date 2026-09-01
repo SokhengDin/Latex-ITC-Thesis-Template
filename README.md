@@ -8,7 +8,8 @@ figures/tables, numbered sections, and a bibliography.
 ## Folder structure
 
 `main.tex` (main document) + `sections/` (chapters) + `figure/` + `references/references.bib`
-+ `fonts/` (Khmer fonts) + `Cover.pdf` (title pages).
++ `fonts/` (Khmer fonts) + `Cover.tex`/`Cover.pdf` (title pages) + `cover_assets/` (logos
+used by `Cover.tex`).
 
 ## Requirements
 
@@ -61,9 +62,13 @@ Set the engine to **XeLaTeX** with shell-escape enabled:
 
 ## How to adapt this for your own thesis
 
-1. **Cover page** -- replace `Cover.pdf` with your own title pages (or edit the
-   `\includepdf[pages={1,2,3}]{Cover.pdf}` line in `main.tex` if your cover has a
-   different number of pages).
+1. **Cover page** -- `Cover.tex` is an editable LaTeX source for the ITC-style cover
+   (title page + Khmer/French defense-approval pages) with placeholders for your name,
+   title, advisor, and dates. Edit it, then run `xelatex Cover.tex` to regenerate
+   `Cover.pdf`, which `main.tex` pulls in via `\includepdf[pages={1,2,3}]{Cover.pdf}`.
+   Not at ITC? Swap the logos in `cover_assets/` and the institution text in `Cover.tex`,
+   or replace `Cover.pdf` entirely with your own PDF (adjust the `pages={...}` range
+   in `main.tex` to match).
 2. **Front matter** -- in `main.tex`, fill in the Acknowledgement, Khmer summary,
    Résumé, and Abstract sections (each is marked with placeholder text). Remove the
    Résumé section if your institution doesn't require a French summary.
