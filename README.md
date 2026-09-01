@@ -58,7 +58,7 @@ Set the engine to **XeLaTeX** with shell-escape enabled:
 
 - **TeXShop/TeXworks**: compiler dropdown → "XeLaTeX".
 - **VS Code (LaTeX Workshop)**: default recipe already runs xelatex → biber → xelatex → xelatex.
-- **Overleaf**: Menu → Settings → Compiler → **XeLaTeX** (shell-escape and Pygments are already enabled).
+- **Overleaf**: already set via the `% !TEX program = xelatex` line at the top of `main.tex`/`Cover.tex` -- Overleaf auto-selects XeLaTeX, no manual setting needed (shell-escape and Pygments are already enabled there too).
 
 ## How to adapt this for your own thesis
 
