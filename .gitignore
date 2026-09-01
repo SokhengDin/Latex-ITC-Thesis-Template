@@ -1,0 +1,45 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.nav
+*.snm
+*.vrb
+
+# biber / biblatex
+*-blx.bib
+*.bcf
+
+# minted (syntax-highlighted code)
+_minted*/
+*.data.minted
+*.pygtex
+*.pygstyle
+
+# LaTeX Workshop (VS Code)
+*.synctex(busy)
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+*.swp
+
+# Keep the compiled example PDF
+!main.pdf
